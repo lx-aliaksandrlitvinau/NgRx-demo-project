@@ -1,7 +1,5 @@
 import { CountActions, countActionsType } from './count.actions';
 
-export const countNode = 'count';
-
 export interface CountState {
   count: number;
   updatedAt: number;

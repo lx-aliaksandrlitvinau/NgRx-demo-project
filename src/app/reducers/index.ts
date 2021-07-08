@@ -1,16 +1,27 @@
 import {
+  ActionReducer,
   ActionReducerMap, MetaReducer
 } from '@ngrx/store';
 
-import { environment } from '../../environments/environment';
-import {countNode, countReducer, CountState} from './count/count.reducer';
+import {countReducer, CountState} from './count/count.reducer';
 
 export interface State {
-  [countNode]: CountState;
+  count: CountState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  [countNode]: countReducer
+  count: countReducer
 };
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+// middleware in Redux == pipe
+
+// export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
+//   return (state, action) =>{
+//     console.log('state', state);
+//     console.log('action', action);
+//
+//     return reducer(state, action);
+//   };
+// }
+
+export const metaReducers: MetaReducer<State>[] = [];

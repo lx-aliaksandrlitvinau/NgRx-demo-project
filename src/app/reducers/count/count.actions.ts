@@ -28,6 +28,14 @@ export class CountUpdatedAtAction implements Action {
   }
 }
 
+// CountUpdatedAtAction action object example
+// {
+//   payload: {
+//     updatedAt: 123
+//   }
+//   type: '[COUNT] updated at'
+// }
+
 export type CountActions = CountIncreaseAction
   | CountDecreaseAction
   | CountClearAction
